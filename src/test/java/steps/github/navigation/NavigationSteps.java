@@ -1,11 +1,9 @@
 package steps.github.navigation;
 
-import pages.github.createRepositoryPage.CreateRepositoryPage;
-import pages.github.listRepositoriesPage.ListRepositoriesPage;
+import pages.github.repository.*;
 import pages.github.menuPage.MenuPage;
 import pages.github.mainPage.MainPage;
-import pages.github.repositorySettingsPage.RepositorySettingsPage;
-import pages.github.successCreationRepositoryPage.SuccessCreationRepositoryPage;
+import pages.github.projectPage.ProjectPage;
 import steps.github.repository.RepositorySteps;
 import steps.github.user.UserSteps;
 
@@ -15,6 +13,7 @@ public class NavigationSteps {
     private SuccessCreationRepositoryPage successCreationRepositoryPage;
     private CreateRepositoryPage createRepositoryPage;
     private RepositorySettingsPage repositorySettingsPage;
+    private ProjectPage projectPage;
 
     public NavigationSteps() {
         mainPage = new MainPage();
@@ -22,6 +21,7 @@ public class NavigationSteps {
         successCreationRepositoryPage = new SuccessCreationRepositoryPage();
         createRepositoryPage = new CreateRepositoryPage();
         repositorySettingsPage = new RepositorySettingsPage();
+        projectPage = new ProjectPage();
     }
 
     public UserSteps clickSignInButtonOnMainPage() {
@@ -29,20 +29,37 @@ public class NavigationSteps {
         return new UserSteps();
     }
 
+
     public RepositorySteps clickNewRepositoryButton() {
         menuPage.getIconPlusButtonLocator().click();
         menuPage.getNewRepositoryButtonLocator().click();
         return new RepositorySteps();
     }
 
-    public SuccessCreationRepositoryPage clickCreateButton() {
+    public SuccessCreationRepositoryPage clickCreateButtonCreateTest() {
         createRepositoryPage.getCreateRepositoryButtonLocator().click();
         return successCreationRepositoryPage;
     }
 
-    public NavigationSteps clickCreateButton2() {
+    public RepositorySteps clickCreateButtonDownloadTest() {
+        createRepositoryPage.getCreateRepositoryButtonLocator().click();
+        return new RepositorySteps();
+    }
+
+
+    public NavigationSteps clickCreateButtonDeleteTest() {
         createRepositoryPage.getCreateRepositoryButtonLocator().click();
         return this;
+    }
+
+    public NavigationSteps clickCreateButtonPopUpTest() {
+        createRepositoryPage.getCreateRepositoryButtonLocator().click();
+        return this;
+    }
+
+    public ProjectPage clickProjectButton() {
+        successCreationRepositoryPage.getProjectButtonLocator().click();
+        return new ProjectPage();
     }
 
     public NavigationSteps clickSettingButton() {
@@ -50,9 +67,14 @@ public class NavigationSteps {
         return this;
     }
 
-    public RepositorySteps clickDeleteRepositoryButton() {
+    public RepositorySteps clickDeleteRepositoryButtonDeleteTest() {
         repositorySettingsPage.getDeleteRepositoryButtonLocator().click();
         return new RepositorySteps();
+    }
+
+    public RepositorySettingsPage clickDeleteRepositoryButtonDialogBoxTest() {
+        repositorySettingsPage.getDeleteRepositoryButtonLocator().click();
+        return new RepositorySettingsPage();
     }
 
     public ListRepositoriesPage deleteRepositoryButton() {

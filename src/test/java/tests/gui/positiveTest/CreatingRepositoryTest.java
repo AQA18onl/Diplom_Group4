@@ -1,4 +1,4 @@
-package tests.gui;
+package tests.gui.positiveTest;
 
 import baseEntities.BaseTest;
 import configuration.ReadProperties;
@@ -8,29 +8,24 @@ import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Condition.visible;
 
-public class DeleteRepositoryTest extends BaseTest {
+public class CreatingRepositoryTest extends BaseTest {
     @Test
-    public void deleteRepositoryTest() {
+    public void creatingRepositoryTest() {
         User user = User.builder()
                 .userName(ReadProperties.username())
                 .password(ReadProperties.password())
                 .build();
 
         Repository repository = Repository.builder()
-                .name("TestRepository")
-                .description("This is test")
-                .deletionInformation("AQA18onl/TestRepository")
+                .name("RepNumber22")
+                .description("Test1")
                 .build();
 
         navigationSteps.clickSignInButtonOnMainPage()
                 .loginSuccessfulGitHub(user)
                 .clickNewRepositoryButton()
                 .inputInfoRepository(repository)
-                .clickCreateButton2()
-                .clickSettingButton()
-                .clickDeleteRepositoryButton()
-                .inputDataForDeleteRepository(repository)
-                .deleteRepositoryButton()
-                .getTextAboutDeleteRepository().shouldBe(visible);
+                .clickCreateButtonCreateTest()
+                .successfulCreationRepositoryPage().shouldBe(visible);
     }
 }

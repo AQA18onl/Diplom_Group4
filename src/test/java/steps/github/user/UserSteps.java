@@ -11,15 +11,25 @@ public class UserSteps {
         loginPage = new LoginPage();
     }
 
-    public UserSteps loginGitHub(String userName, String password) {
+    public UserSteps inputLoginData(String userName, String password) {
         loginPage.getUserNameInputLocator().setValue(userName);
         loginPage.getPasswordInputLocator().setValue(password);
+        return this;
+    }
+
+    public UserSteps clickButtonSignInLoginPage() {
         loginPage.getLoginButtonLocator().click();
         return this;
     }
 
     public NavigationSteps loginSuccessfulGitHub(User user) {
-        loginGitHub(user.getUserName(), user.getPassword());
+        inputLoginData(user.getUserName(), user.getPassword());
+        clickButtonSignInLoginPage();
         return new NavigationSteps();
+    }
+    public LoginPage loginIncorrect(User user) {
+        inputLoginData(user.getUserName(), user.getPassword());
+        clickButtonSignInLoginPage();
+        return loginPage;
     }
 }

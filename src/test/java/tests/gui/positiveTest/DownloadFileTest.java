@@ -1,4 +1,4 @@
-package tests.gui;
+package tests.gui.positiveTest;
 
 import baseEntities.BaseTest;
 import configuration.ReadProperties;
@@ -8,24 +8,26 @@ import org.testng.annotations.Test;
 
 import static com.codeborne.selenide.Condition.visible;
 
-public class CreatingRepositoryTest extends BaseTest {
+public class DownloadFileTest extends BaseTest {
     @Test
-    public void creatingRepositoryTest() {
+    public void downloadFileTest() {
         User user = User.builder()
                 .userName(ReadProperties.username())
                 .password(ReadProperties.password())
                 .build();
 
         Repository repository = Repository.builder()
-                .name("RepNumber22")
-                .description("Test1")
+                .name("Kek21")
+                .description("Test11232")
                 .build();
 
         navigationSteps.clickSignInButtonOnMainPage()
                 .loginSuccessfulGitHub(user)
                 .clickNewRepositoryButton()
                 .inputInfoRepository(repository)
-                .clickCreateButton()
-                .successfulCreationRepositoryPage().shouldBe(visible);
+                .clickCreateButtonDownloadTest()
+                .chooseFileButtonClick()
+                .downloadFile()
+                .getCheckDownloadFileLocator().shouldBe(visible);
     }
 }
