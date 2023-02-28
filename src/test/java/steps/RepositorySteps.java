@@ -1,11 +1,10 @@
-package steps.github.repository;
+package steps;
 
 import model.Repository;
-import pages.github.repository.CreateRepositoryPage;
-import pages.github.repository.DownloadFilePage;
-import pages.github.repository.RepositorySettingsPage;
-import pages.github.repository.SuccessCreationRepositoryPage;
-import steps.github.navigation.NavigationSteps;
+import pages.repository.CreateRepositoryPage;
+import pages.repository.DownloadFilePage;
+import pages.repository.RepositorySettingsPage;
+import pages.repository.SuccessCreationRepositoryPage;
 
 import java.io.File;
 

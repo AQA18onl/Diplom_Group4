@@ -1,4 +1,4 @@
-package pages.github.menuPage;
+package pages;
 
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;

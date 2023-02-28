@@ -1,8 +1,7 @@
-package steps.github.user;
+package steps;
 
 import model.User;
-import pages.github.loginPage.LoginPage;
-import steps.github.navigation.NavigationSteps;
+import pages.LoginPage;
 
 public class UserSteps {
     private LoginPage loginPage;

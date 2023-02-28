@@ -1,4 +1,4 @@
-package pages.github.repository;
+package pages.repository;
 
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;

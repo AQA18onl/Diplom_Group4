@@ -4,11 +4,11 @@ import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import configuration.ReadProperties;
 import io.qameta.allure.selenide.AllureSelenide;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeSuite;
-import steps.github.navigation.NavigationSteps;
-import steps.github.repository.RepositorySteps;
-import steps.github.user.UserSteps;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import steps.NavigationSteps;
+import steps.RepositorySteps;
+import steps.UserSteps;
 
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
@@ -20,7 +20,7 @@ public class BaseTest {
     protected UserSteps userSteps;
 
 
-    @BeforeSuite
+    @BeforeTest
     public void setUp() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
@@ -40,7 +40,7 @@ public class BaseTest {
 //        Configuration.reportsFolder = "target/";
     }
 
-    @AfterMethod
+    @AfterTest
     public void tearDown() {
         closeWebDriver();
     }

@@ -1,11 +1,13 @@
-package steps.github.navigation;
+package steps;
 
 import pages.github.repository.*;
-import pages.github.menuPage.MenuPage;
-import pages.github.mainPage.MainPage;
-import pages.github.projectPage.ProjectPage;
-import steps.github.repository.RepositorySteps;
-import steps.github.user.UserSteps;
+import pages.MenuPage;
+import pages.MainPage;
+import pages.ProjectPage;
+import pages.repository.CreateRepositoryPage;
+import pages.repository.ListRepositoriesPage;
+import pages.repository.RepositorySettingsPage;
+import pages.repository.SuccessCreationRepositoryPage;
 
 public class NavigationSteps {
     private MainPage mainPage;
