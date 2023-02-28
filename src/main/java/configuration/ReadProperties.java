@@ -18,6 +18,7 @@ public class ReadProperties {
     public static String getUrl() {
         return properties.getProperty("url");
     }
+
     public static String getApiUrl() {
         return properties.getProperty("apiUrl");
     }
@@ -34,9 +35,19 @@ public class ReadProperties {
     public static String password() {
         return properties.getProperty("password");
     }
+
     public static String database() {
         return properties.getProperty("database");
     }
+
+    public static String token() {
+        return properties.getProperty("token");
+    }
+
+    public static String owner() {
+        return properties.getProperty("owner");
+    }
+
 
     public static boolean isHeadless() {
         return properties.getProperty("headless").equalsIgnoreCase("true");
