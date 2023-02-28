@@ -1,6 +1,5 @@
 package steps;
 
-import pages.github.repository.*;
 import pages.MenuPage;
 import pages.MainPage;
 import pages.ProjectPage;
